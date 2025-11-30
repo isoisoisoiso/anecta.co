@@ -3,113 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>事業内容 | 株式会社ANECTA</title>
+    <title>サービス詳細 | 株式会社ANECTA</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
+    <header class="header">
         <div class="container header-inner">
-            <a href="index.html" class="logo">ANECTA</a>
-            <div class="hamburger"><i class="fas fa-bars"></i></div>
-            <nav class="nav-menu">
-                <a href="index.html">ホーム</a>
-                <a href="about.html">私たちについて</a>
-                <a href="service.html">事業内容</a>
-                <a href="contact.html">お問い合わせ</a>
+            <h1 class="logo"><a href="index.html" style="color: inherit;">ANECTA</a></h1>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html#service">サービス</a></li>
+                    <li><a href="index.html#products">プロダクト</a></li>
+                    <li><a href="about.html">会社概要</a></li>
+                    <li><a href="contact.html" class="btn-nav">お問い合わせ</a></li>
+                </ul>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="section" style="padding-top: 120px;">
+        <section class="section concept" style="padding-top: 120px;">
             <div class="container">
-                <h1 class="section-title">SERVICE</h1>
-                <p style="text-align: center; margin-bottom: 60px;">AI技術を核とした3つのソリューションで、<br>お客様のビジネスを変革します。</p>
+                <div class="section-header">
+                    <span class="section-subtitle">SERVICE DETAIL</span>
+                    <h2 class="section-title">サービス詳細</h2>
+                </div>
+                <p class="concept-lead">
+                    介護・配送など現場産業のDXを支援します。<br>
+                    業務フローの設計からAI・Webシステムの導入まで、誠実に伴走します。
+                </p>
+            </div>
+        </section>
 
-                <div class="card" style="display: flex; flex-direction: column; md:flex-row; margin-bottom: 60px;">
-                    <img src="images/kaigo_DX.jpeg" alt="介護支援DX" style="width: 100%; height: 300px; object-fit: cover;">
-                    <div class="card-body">
-                        <h2 style="color: var(--primary-color); margin-bottom: 15px;">01. 介護支援DX事業</h2>
-                        <p class="card-text">
-                            介護現場の「紙・電話・属人化」で失われている時間を、AIとデジタル化で取り戻す。<br>
-                            現場ヒアリングを徹底し、実際に使われる仕組みだけをミニマムに導入することで、<br>
-                            スタッフが本来の"ケアに集中できる環境"を作ります。
+        <section class="section service">
+            <div class="container">
+                <div class="service-detail-card">
+                    <div class="service-detail-header">
+                        <span class="service-detail-number">01</span>
+                        <h3 class="service-detail-title">現場DX支援<br><span class="service-detail-subtitle">システム開発・導入</span></h3>
+                    </div>
+                    <img src="../images/kaigo_DX.jpeg" alt="介護支援DX" style="width: 100%; max-width: 600px; margin: 20px auto; display: block; border-radius: 8px;">
+                    <div class="service-detail-content">
+                        <p class="service-detail-lead">
+                            送迎連絡・日報・帳票作成など、これまで紙と電話で回していた業務をWebシステムに置き換えます。パッケージ導入からスクラッチ開発まで柔軟に対応します。
                         </p>
-                        <ul style="margin-top: 15px; color: #555;">
-                            <li><i class="fas fa-check" style="color: var(--accent-color);"></i> 介護記録のデジタル化・ペーパーレス化<br>
-                            <span style="font-size: 0.9em; color: #777;">（音声入力、写真付きメモ、家族への自動共有など）</span></li>
-                            <li><i class="fas fa-check" style="color: var(--accent-color);"></i> 業務フローの自動化支援<br>
-                            <span style="font-size: 0.9em; color: #777;">（送迎連絡・申し送り・体調メモの自動化、ミスの削減）</span></li>
-                            <li><i class="fas fa-check" style="color: var(--accent-color);"></i> スタッフの勤怠・シフト・配置の最適化<br>
-                            <span style="font-size: 0.9em; color: #777;">（手書きや口頭管理をゼロに近づける実装）</span></li>
+                        <h4 class="service-detail-subtitle-heading">主な対象業種</h4>
+                        <ul class="service-detail-list">
+                            <li>介護・福祉事業所</li>
+                            <li>配送・物流業</li>
+                            <li>現場作業が多い中小企業</li>
+                        </ul>
+                        <h4 class="service-detail-subtitle-heading">提供内容</h4>
+                        <ul class="service-detail-list">
+                            <li>業務フローのヒアリング・分析</li>
+                            <li>システム要件定義・設計</li>
+                            <li>開発・導入・運用サポート</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="card" style="display: flex; flex-direction: column; margin-bottom: 60px;">
-                    <img src="images/haisou_DX.jpeg" alt="配送業DX" style="width: 100%; height: 300px; object-fit: cover;">
-                    <div class="card-body">
-                        <h2 style="color: var(--primary-color); margin-bottom: 15px;">02. 配送業DX事業</h2>
-                        <p class="card-text">
-                            配送現場でいまだに残る「紙の日報・曖昧な引き継ぎ・Excel管理の崩壊」を、<br>
-                            スマホだけで完結する日報管理システムで置き換えます。<br>
-                            ドライバーが"毎日ストレスなく使えること"を最優先に、<br>
-                            現場で本当に必要な機能だけをミニマムに実装します。
+                <div class="service-detail-card">
+                    <div class="service-detail-header">
+                        <span class="service-detail-number">02</span>
+                        <h3 class="service-detail-title">DX顧問・AI活用<br><span class="service-detail-subtitle">企画・運用伴走</span></h3>
+                    </div>
+                    <img src="../images/haisou_DX.jpeg" alt="配送業DX" style="width: 100%; max-width: 600px; margin: 20px auto; display: block; border-radius: 8px;">
+                    <div class="service-detail-content">
+                        <p class="service-detail-lead">
+                            「何から始めるべきか」の企画段階から参画。補助金の事業計画づくりからツール選定、社内展開の教育までを月額制で伴走します。
                         </p>
-                        <ul style="margin-top: 15px; color: #555;">
-                            <li><i class="fas fa-check" style="color: var(--accent-color);"></i> 日報のデジタル化・クラウド保存<br>
-                            <span style="font-size: 0.9em; color: #777;">（紙→スマホで入力／データの自動整理）</span></li>
-                            <li><i class="fas fa-check" style="color: var(--accent-color);"></i> 点呼・稼働実績の一元管理<br>
-                            <span style="font-size: 0.9em; color: #777;">（運行管理者が毎日確認しやすいUI）</span></li>
+                        <h4 class="service-detail-subtitle-heading">こんな企業様におすすめ</h4>
+                        <ul class="service-detail-list">
+                            <li>DXを進めたいが何から始めればいいかわからない</li>
+                            <li>社内にITに詳しい人材がいない</li>
+                            <li>補助金を活用したい</li>
+                        </ul>
+                        <h4 class="service-detail-subtitle-heading">提供内容</h4>
+                        <ul class="service-detail-list">
+                            <li>DX戦略の立案・ロードマップ作成</li>
+                            <li>ツール選定・導入支援</li>
+                            <li>社内教育・運用サポート</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="card" style="display: flex; flex-direction: column; margin-bottom: 60px;">
-                    <img src="images/soccer.png" alt="スポーツメディア運営" style="width: 100%; height: 300px; object-fit: cover;">
-                    <div class="card-body">
-                        <h2 style="color: var(--primary-color); margin-bottom: 15px;">03. スポーツメディア運営事業</h2>
-                        <p class="card-text">
-                            「スポーツをもっと深く、もっと直感的に楽しめる体験」をテーマに、<br>
-                            個人開発の強みであるスピードと発想力を活かした、<br>
-                            特化型スポーツメディア × データ体験プロダクト を展開します。<br>
-                            W杯抽選シミュレーターのような"遊べるデータ"を軸に、<br>
-                            鮮度の高い情報とUXを重視した設計でファンの体験価値を高めます。
+                <div class="service-detail-card">
+                    <div class="service-detail-header">
+                        <span class="service-detail-number">03</span>
+                        <h3 class="service-detail-title">小さなWeb開発<br><span class="service-detail-subtitle">PoC・プロトタイプ</span></h3>
+                    </div>
+                    <div class="service-detail-content">
+                        <p class="service-detail-lead">
+                            フルスクラッチの大規模システムではなく、数ヶ月で試せる小さなプロトタイプや管理画面の制作を得意とします。まずは小さく試したい企業様に。
                         </p>
-                        <ul style="margin-top: 15px; color: #555;">
-                            <li><i class="fas fa-check" style="color: var(--accent-color);"></i> 特化型スポーツWebコンテンツの企画・運営<br>
-                            <span style="font-size: 0.9em; color: #777;">（抽選シミュレーション、会場情報、データ可視化ツール など）</span></li>
-                            <li><i class="fas fa-check" style="color: var(--accent-color);"></i> AIを活用した記事生成・データ分析支援<br>
-                            <span style="font-size: 0.9em; color: #777;">（ハイライト整理、対戦確率、レギュレーション解析）</span></li>
-                            <li><i class="fas fa-check" style="color: var(--accent-color);"></i> ファンコミュニティ／SNS導線の構築支援<br>
-                            <span style="font-size: 0.9em; color: #777;">（参加型キャンペーン、シェア画像生成、SNS拡散ギミック）</span></li>
+                        <h4 class="service-detail-subtitle-heading">制作実績例</h4>
+                        <ul class="service-detail-list">
+                            <li>業務管理画面・ダッシュボード</li>
+                            <li>データ可視化ツール</li>
+                            <li>社内向けWebアプリケーション</li>
+                        </ul>
+                        <h4 class="service-detail-subtitle-heading">開発期間・費用</h4>
+                        <ul class="service-detail-list">
+                            <li>期間：2〜4ヶ月程度</li>
+                            <li>費用：お見積りにて（小規模から対応可能）</li>
                         </ul>
                     </div>
                 </div>
+            </div>
+        </section>
 
+        <section class="section cta">
+            <div class="container">
+                <h2 class="cta-title">まずは、今抱えている<br>"やりづらさ"を教えてください。</h2>
+                <p class="cta-text">システム導入がゴールではなく、<br>現場でちゃんと使われ続けることを一緒に目指します。</p>
+                <a href="contact.html" class="btn-primary btn-large">お問い合わせ</a>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container footer-inner">
-            <div>
-                <h3>株式会社ANECTA</h3>
-                <p>〒359-1142<br>埼玉県所沢市上新井</p>
-            </div>
+    <footer class="footer">
+        <div class="container">
             <div class="footer-links">
-                <a href="index.html">ホーム</a>
-                <a href="about.html">私たちについて</a>
-                <a href="service.html">事業内容</a>
+                <a href="policy.html">プライバシーポリシー</a>
+                <a href="about.html">運営会社</a>
                 <a href="contact.html">お問い合わせ</a>
             </div>
-        </div>
-        <div class="copyright">
-            &copy; 2025 ANECTA Inc. All Rights Reserved.
+            <p class="copyright">&copy; ANECTA Inc. All Rights Reserved.</p>
         </div>
     </footer>
-    <script src="script.js"></script>
+
 </body>
 </html>
+
