@@ -1,0 +1,17 @@
+# ルートに残っているパートナー募集HTML（partnerディレクトリに移動済み）
+WorldCupDrawLab_partner_bosyu.html
+
+# Old files
+old/
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【1社限定】2026年W杯 抽選シミュレーター 協賛パートナー募集</title>
+    <style>
+        /* --- 基本設定 --- */
+        :root {
+            --primary-color: #001e43; /* サムライブルー風の濃紺 */
+            --accent-color: #e60012; /* 情熱の赤 */
+            --gold-color: #c5a059; /* 権威あるゴールド */
+            --text-color: #333;
+            --bg-light: #f4f7fa;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--bg-light);
+        }
+
+        h1, h2, h3 {
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 60px 0;
+            background-color: var(--white);
+            margin-bottom: 2px;
+        }
+
+        .text-center { text-align: center; }
+        .text-accent { color: var(--accent-color); }
+        .text-primary { color: var(--primary-color); }
+        .bold { font-weight: bold; }
+
+        /* --- ヒーローセクション --- */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #003366 100%);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .btn-main {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 16px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(230, 0, 18, 0.4);
+            transition: transform 0.2s;
+        }
+
+        .btn-main:hover {
+            transform: translateY(-2px);
+            background-color: #c2000f;
+        }
+
+        /* --- 見出しデザイン --- */
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 15px auto 0;
+        }
+
+        /* --- 数字の実績（グリッド） --- */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat-card {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* --- メリット（カード） --- */
+        .benefit-card {
+            border: 2px solid var(--primary-color);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            background: var(--white);
+            position: relative;
+        }
+
+        .benefit-number {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .highlight-box {
+            background-color: #fff8e1; /* 薄いゴールド */
+            border-left: 5px solid var(--gold-color);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        /* --- スケジュール表 --- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: var(--white);
+            width: 30%;
+        }
+
+        tr:nth-child(even) {
+            background-color: var(--bg-light);
+        }
+
+        /* --- CTAセクション --- */
+        .cta-section {
+            background-color: #333;
+            color: var(--white);
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .btn-sub {
+            display: inline-block;
+            background-color: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+            padding: 14px 30px;
+            font-size: 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .btn-sub:hover {
+            background-color: var(--white);
+            color: #333;
+        }
+
+        /* スマホ対応 */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.8rem; }
+            .section-title { font-size: 1.5rem; }
+            th, td { display: block; width: 100%; box-sizing: border-box; }
+            th { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <p>2026年W杯 抽選シミュレーター × 企業協賛企画</p>
+            <h1>抽選会30時間で<br>最大10万インプレッション</h1>
+            <p>御社ブランドの「自然な露出」を最大化するキャンペーンのご提案。<br>最も美味しい枠を、1社限定で。</p>
+            <a href="#overview" class="btn-main">企画資料を見る</a>
+        </div>
+    </header>
+
+    <section id="overview">
+        <div class="container">
+            <h2 class="section-title">企画概要</h2>
+            <div class="highlight-box">
+                <h3>🧩 企画名</h3>
+                <p><strong>「日本代表と同組予想キャンペーン × 2026年W杯 抽選シミュレーター」</strong></p>
+            </div>
+            <p>急速にユーザー数を伸ばしているWebサービスと連動した、参加型プレゼントキャンペーンです。<br>
+            W杯の抽選会が行われる12月6日。サッカーファンが最も熱狂するこの瞬間に、御社のブランドを「話題の中心」に置きます。</p>
+            <p class="text-center" style="margin-top: 20px;">
+                <a href="https://worldcupdrawlab.com/" target="_blank" style="color: var(--primary-color);">🔗 サービスURLを確認する</a>
+            </p>
+        </div>
+    </section>
+
+    <section style="background-color: var(--bg-light);">
+        <div class="container">
+            <h2 class="section-title">Webサービスの実績と信頼性</h2>
+            <p class="text-center" style="margin-bottom: 30px;">リリース6日で爆発的に成長中。数字がファンの熱量を証明しています。</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-label">アクティブユーザー</span>
+                    <span class="stat-number">7,000+</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">リピート率</span>
+                    <span class="stat-number">15%</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">SNSインプレッション</span>
+                    <span class="stat-number">4.3万+</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">高評価レビュー</span>
+                    <span class="stat-number">300+</span>
+                </div>
+            </div>
+            
+            <div class="text-center" style="margin-top: 40px;">
+                <p class="bold text-accent">📅 12/6（抽選日）にアクセスは最高潮へ</p>
+                <p>予測：最低1〜2万 / <span class="bold" style="font-size:1.2rem;">最大10万PV以上</span><br>
+                "抽選会の日" に合わせたキャンペーンは、1年で最も費用対効果が高い施策になります。</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">【1社限定】協賛内容のお願い</h2>
+            <div style="background: #fff; border: 1px solid #ddd; padding: 30px; border-radius: 8px;">
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 15px;"><strong>🎁 御社にお願いしたい協賛物：</strong><br>トリオンダ リーグ ルシアーダ（5号球） × 1点</li>
+                    <li style="margin-bottom: 15px;"><strong>💰 費用：</strong><br><span class="text-accent bold" style="font-size: 1.2rem;">無料（物品協賛のみ）</span></li>
+                    <li style="margin-bottom: 15px;"><strong>🚚 発送：</strong><br>弊社対応可（希望により御社発送も可能）</li>
+                </ul>
+                <p class="text-center bold" style="margin-top: 20px; color: var(--primary-color);">
+                    本キャンペーンは 1社限定。最も美味しい露出を独占できます。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section style="background-color: var(--primary-color); color: var(--white);">
+        <div class="container">
+            <h2 class="section-title" style="color: var(--white);">御社のメリット（露出ポイント）</h2>
+            <p class="text-center" style="margin-bottom: 40px;">単なるバナー広告ではなく、ユーザー体験の中にブランドが自然に溶け込みます。</p>
+
+            <div class="benefit-card">
+                <span class="benefit-number">メリット 1</span>
+                <h3 class="text-primary">シェア画像の右下にロゴ掲載（最強の拡散点）</h3>
+                <p style="color: #333; margin-top: 10px;">
+                    シミュレーション結果画像に御社ロゴが入ります。<br>
+                    1ユーザーが拡散すると平均30〜100人にリーチ。ユーザー自身が広告塔となり、自然な形でブランドが広がります。
+                </p>
+            </div>
+
+            <div class="benefit-card">
+                <span class="benefit-number">メリット 2</span>
+                <h3 class="text-primary">キャンペーン特設ページでの商品掲載</h3>
+                <p style="color: #333; margin-top: 10px;">
+                    「トリオンダ リーグ ルシアーダ」を写真＋商品説明付きで大きく掲載。サッカーファンへの訴求力は抜群です。
+                </p>
+            </div>
+
+            <div class="benefit-card">
+                <span class="benefit-number">メリット 3</span>
+                <h3 class="text-primary">シミュレーター内に協賛表記</h3>
+                <p style="color: #333; margin-top: 10px;">
+                    全ユーザーが操作する画面の下部に「協賛：御社名」を常時表示。刷り込み効果が期待できます。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">仕組みと運用体制</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 30px;">
+                <div style="flex: 1; min-width: 300px;">
+                    <h3>🏆 キャンペーンの仕組み</h3>
+                    <p><strong>当選条件：</strong>日本と同組になる3チームを完全的中した方</p>
+                    <p><strong>的中率：</strong>約 0.075〜0.11%</p>
+                    <p><strong>応募予測：</strong>3,000〜10,000名</p>
+                    <p style="font-size: 0.9rem; color: #666;">※的中者0名の場合は応募者全体から抽選するため、賞品は必ず消化されます。</p>
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <h3>🛡 御社に負担のない運用設計</h3>
+                    <p><strong>弊社対応：</strong>応募管理、的中判定、当選連絡、個人情報管理、発送（希望時）</p>
+                    <p><strong>御社対応：</strong>協賛判断、商品提供のみ</p>
+                    <p class="text-accent">※個人情報は厳重に管理し、キャンペーン終了後に破棄します。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background-color: var(--bg-light);">
+        <div class="container">
+            <h2 class="section-title">スケジュール案</h2>
+            <table>
+                <tr>
+                    <th>12/1〜2</th>
+                    <td><strong>協賛判断</strong></td>
+                </tr>
+                <tr>
+                    <th>12/3〜4</th>
+                    <td>告知開始</td>
+                </tr>
+                <tr>
+                    <th>12/4 18:00</th>
+                    <td>応募開始（フォームオープン）</td>
+                </tr>
+                <tr>
+                    <th>12/4〜5</th>
+                    <td class="bold text-accent">応募期間（熱量が最大化）</td>
+                </tr>
+                <tr>
+                    <th>12/6 04:00</th>
+                    <td>W杯抽選会 → 当選確定</td>
+                </tr>
+                <tr>
+                    <th>12/8</th>
+                    <td>当選発表 & 発送</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <footer class="cta-section">
+        <div class="container">
+            <h2>御社とともに、2026年W杯を盛り上げる企画を。</h2>
+            <p>1社限定のため、お早めのご連絡をお待ちしております。</p>
+            <div class="cta-buttons">
+                <a href="mailto:contact@anecta.co.jp" class="btn-main">お問い合わせ</a>
+                <a href="../index.html" class="btn-sub">ANECTAについて</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+
